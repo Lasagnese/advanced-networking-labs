@@ -25,8 +25,8 @@ def firstNetwork():
     
     info( '*** Adding switch\n' )
     s14 = net.addSwitch( 's14' )
-    s24 = net.addSwitch( 's14' )
-    s34 = net.addSwitch( 's14' )
+    s24 = net.addSwitch( 's24' )
+    s34 = net.addSwitch( 's34' )
     
     info( '*** Creating links\n' )
     net.addLink( PC1, s14 )
