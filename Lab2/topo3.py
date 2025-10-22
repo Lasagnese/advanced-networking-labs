@@ -57,10 +57,10 @@ def firstNetwork():
     
 	h2.cmd('ip -4 addr flush dev h2-eth0')
 	h2.cmd('ip addr add 10.0.2.2/24 dev h2-eth0')
-	h2.cmd('ip route add default via 10.5.0.100')
+	h2.cmd('ip route add default via 10.0.2.1')
     #ipv6
 	h2.cmd('ip -6 addr add 2020::2:2/112 dev h2-eth0')
-	h2.cmd('ip -6 route add default via 2020::10:2')
+	h2.cmd('ip -6 route add default via 2020::2:1')
     
     
 	h3.cmd('ip -4 addr flush dev h3-eth0')
@@ -126,7 +126,11 @@ def firstNetwork():
 	r1.cmd('ip route add 10.0.3.0/24 via 10.0.5.2')
 	r1.cmd('ip route add 10.0.4.0/24 via 10.0.7.2')
 	r1.cmd('ip route add 10.0.6.0/24 via 10.0.7.2')
-    
+
+	r2.cmd('ip route add 10.0.1.0/24 via 10.0.5.1')
+	r2.cmd('ip route add 10.0.2.0/24 via 10.0.5.1')
+	r2.cmd('ip route add 10.0.4.0/24 via 10.0.6.2')
+	r2.cmd('ip route add 10.0.7.0/24 via 10.0.6.2')
     
 	r3.cmd('ip route add 10.0.1.0/24 via 10.0.7.1')
 	r3.cmd('ip route add 10.0.2.0/24 via 10.0.7.1')
@@ -138,8 +142,12 @@ def firstNetwork():
 	r1.cmd('ip -6 route add 2020::3:0/112 via 2020::5:2')
 	r1.cmd('ip -6 route add 2020::4:0/112 via 2020::7:2')
 	r1.cmd('ip -6 route add 2020::6:0/112 via 2020::7:2')
-    
 
+	r2.cmd('ip -6 route add 2020::1:0/112 via 2020::5:1')
+	r2.cmd('ip -6 route add 2020::2:0/112 via 2020::5:1')
+	r2.cmd('ip -6 route add 2020::4:0/112 via 2020::6:2')
+	r2.cmd('ip -6 route add 2020::7:0/112 via 2020::6:2')
+    
 	r3.cmd('ip -6 route add 2020::1:0/112 via 2020::7:1')
 	r3.cmd('ip -6 route add 2020::2:0/112 via 2020::7:1')
 	r3.cmd('ip -6 route add 2020::3:0/112 via 2020::6:1')
