@@ -152,8 +152,6 @@ def Lab4_Network():
     r5.cmd('/usr/lib/frr/ospfd -d -f /home/advnet/Desktop/lab4/configs/ospfd_r5.cfg -i /home/advnet/Desktop/lab4/run/ospfd_r5.pid -z /home/advnet/Desktop/lab4/run/frr_r5.api -u frr -g frr')
 
 
-
-
     os.system("chown advnet /home/advnet/Desktop/lab4/logs/*")
     info( '*** Running the command line interface\n' )
     CLI( net )
